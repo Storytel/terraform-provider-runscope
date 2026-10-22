@@ -1,0 +1,11 @@
+name: Dependabot Auto Merge
+
+on:
+  pull_request_target:
+
+jobs:
+  dependabot-auto-merge:
+    uses: storytel/actions-toolkit/.github/workflows/dependabot-auto-merge.yaml@main
+    with:
+      target: major
+      merge_type: merge
