@@ -67,7 +67,7 @@ func (sb *StepRequest) setFromSchema(s *schema.StepRequest) {
 			Source:     a.Source,
 			Property:   a.Property,
 			Comparison: a.Comparison,
-			Value:      a.Value,
+			Value:      a.Value.String(),
 		}
 	}
 	for header, values := range s.Headers {
@@ -126,7 +126,7 @@ func (sbo *StepRequestOpts) setRequest(sb *schema.StepRequest) {
 		sb.Assertions[i] = schema.StepAssertion{
 			Source:     a.Source,
 			Comparison: a.Comparison,
-			Value:      a.Value,
+			Value:      schema.FlexString(a.Value),
 			Property:   a.Property,
 		}
 	}
